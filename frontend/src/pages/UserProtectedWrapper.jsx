@@ -7,7 +7,7 @@ const UserProtectedWrapper = ({ children }) => {
 
     const token = localStorage.getItem('token')
     const navigate = useNavigate();
-    const {user, setUser} = useContext(UserDataContext);
+    const { user, setUser } = useContext(UserDataContext);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -29,13 +29,13 @@ const UserProtectedWrapper = ({ children }) => {
             localStorage.removeItem('token');
             navigate('/login');
         })
-    
+
     }, [token]);
-    
+
     if (isLoading) {
         return (
-            <div>
-                Loading...
+            <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
+                <div className="spinner"></div>
             </div>
         )
     }

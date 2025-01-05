@@ -33,8 +33,8 @@ const CaptainProtectedWrapper = ({ children }) => {
 
     if (isLoading) {
         return (
-            <div>
-                Loading...
+            <div className="flex items-center justify-center h-screen w-screen bg-gray-100">
+                <div className="spinner"></div>
             </div>
         )
     }
